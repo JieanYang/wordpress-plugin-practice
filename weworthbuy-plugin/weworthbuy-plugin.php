@@ -36,7 +36,7 @@
 		}
 
 		public function admin_index() {
-			// require template
+			require_once plugin_dir_path(__File__) . 'templates/admin.php';
 		}
 
 		protected function create_post_type() {
