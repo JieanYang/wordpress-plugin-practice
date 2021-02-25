@@ -4,17 +4,13 @@
  */
 /**
  * Plugin Name:       Weworthbuy Plugin
- <!-- * Plugin URI:        https://example.com/plugins/the-basics/ -->
- <!-- * Description:       Handle the basics with this plugin. -->
+ * Description:       Wordpress plugin practice
  * Version:           0.0.1
- <!-- * Requires at least: 5.2 -->
- <!-- * Requires PHP:      7.2 -->
  * Author:            Jiean yang
- <!-- * Author URI:        https://author.example.com/ -->
+ * Author URI:        https://wemediaweb.com/
  * License:           GPL v2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       weworthbuy-plugin
- <!-- * Domain Path:       /languages -->
  */
 
 
