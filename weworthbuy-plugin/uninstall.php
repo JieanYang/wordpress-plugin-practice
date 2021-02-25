@@ -1,6 +1,8 @@
 <?php 
 /**
  * Trigger this file on Plugin uninstall
+ * // delete CPT
+ * // delete all the plugin data from the DB(Database)
  * 
  * @package WeworthbuyPlugin
  */

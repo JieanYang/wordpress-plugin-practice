@@ -27,8 +27,8 @@
  class WeworthbuyPlugin 
  {
 
- 	static function register() {
- 		add_action('admin_enqueue_scripts', array( 'WeworthbuyPlugin', 'enqueue'));
+ 	function register() {
+ 		add_action('admin_enqueue_scripts', array($this, 'enqueue'));
  	}
 
 
@@ -37,30 +37,13 @@
  	}
 
 
- 	function activate() {
- 		// generated  a CPT(Custom Post Type)
- 		$this->custom_post_type();
- 		// flush rewrite rules
- 		flush_rewrite_rules();
- 	}
-
- 	function deactivate() {
- 		// flush rewrite rules
- 		flush_rewrite_rules();
- 	}
-
- 	// function uninstall() {
- 		// delete CPT
- 		// delete all the plugin data from the DB(Database)
- 	// }
-
  	function custom_post_type() {
  		register_post_type('book', ['public' => true, 'label' => 'Books' ]);
 
  	}
 
 
- 	static function enqueue() {
+ 	function enqueue() {
  		// enqueue all our scripts
  		wp_enqueue_style('mypluginstyle', plugins_url('/assets/mystyle.css', __FILE__));
  		wp_enqueue_script('mypluginscript', plugins_url('/assets/myscript.js', __FILE__));
@@ -73,22 +56,25 @@
 
 
  if(class_exists('WeworthbuyPlugin')) {
- 	// $weworthbuyPlugin = new WeworthbuyPlugin();
- 	// $weworthbuyPlugin->register();
- 	WeworthbuyPlugin::register();
+ 	$weworthbuyPlugin = new WeworthbuyPlugin();
+ 	$weworthbuyPlugin->register();
  }
 
 
 
 // activation
-// register_activation_hook(__FILE__, array($weworthbuyPlugin, 'activate'));
+require_once plugin_dir_path(__File__) . 'inc/weworthbuy-plugin-activate.php';
+register_activation_hook(__FILE__, array('WeworthbuyPluginActivate', 'activate'));
 
 
 // deactivation
-// register_deactivation_hook(__FILE__, array($weworthbuyPlugin, 'deactivate'));
+require_once plugin_dir_path(__File__) . 'inc/weworthbuy-plugin-deactivate.php';
+register_deactivation_hook(__FILE__, array('WeworthbuyPluginDeactivate', 'deactivate'));
 
 
 
+// uninstall
+// register_uninstall_hook(__FILE__, array($weworthbuyPlugin, 'uninstall'));
 
 
 
