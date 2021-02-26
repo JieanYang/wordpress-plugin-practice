@@ -1,5 +1,5 @@
 {
-    "name": "jieanyang/wordpress-plugin-practice",
+    "name": "jieanyang/weworthbuy-plugin",
     "type": "project",
     "license": "GPL",
     "authors": [
@@ -9,7 +9,7 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {},
+    "require": {}, 
     "autoload": {
         "psr-4": {"Inc\\": "./inc"}
     }
