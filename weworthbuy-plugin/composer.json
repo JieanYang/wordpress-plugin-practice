@@ -1,0 +1,16 @@
+{
+    "name": "jieanyang/wordpress-plugin-practice",
+    "type": "project",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Jiean Yang",
+            "email": "jiean.yang.freelancer@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {"Inc\\": "./inc"}
+    }
+}
