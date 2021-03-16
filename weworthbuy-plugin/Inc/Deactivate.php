@@ -2,12 +2,13 @@
 /**
  * @package WeworthbuyPlugin
  */
+namespace Inc;
 
-
-class WeworthbuyPluginDeactivate
+class Deactivate
 {
 	public static function deactivate() {
 		// flush rewrite rules
+
 		flush_rewrite_rules();
 	}
 }

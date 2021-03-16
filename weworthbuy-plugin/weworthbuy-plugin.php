@@ -19,11 +19,12 @@
  	die;
  }
 
-//  if(file_exists(dirname(__FILE__) . '/vendor/autoload.php')) {
-// 	 require_once dirname(__FILE__) . '/vendor/autoload.php';
-//  }
+ if(file_exists(dirname(__FILE__) . '/vendor/autoload.php')) {
+	 require_once dirname(__FILE__) . '/vendor/autoload.php';
+ }
  
-//  use Inc\WeworthbuyPluginActivate;
+ use Inc\Activate;
+ use Inc\Deactivate;
 
  if(!class_exists('WeworthbuyPlugin')) {
 
@@ -80,23 +81,29 @@
 
 		}
 
+		function activate() {
+			Activate::activate();
+		}
+
+		function deactivate() {
+			Deactivate::deactivate();
+		}
+
 	}
 
 
 
 	$weworthbuyPlugin = new WeworthbuyPlugin();
 	$weworthbuyPlugin->register();
-		
-	 
 	 
 	// activation
-	require_once plugin_dir_path(__File__) . 'inc/Base/weworthbuy-plugin-activate.php';
-	register_activation_hook(__FILE__, array('WeworthbuyPluginActivate', 'activate'));
+	// require_once plugin_dir_path(__File__) . 'inc/Base/Activate.php';
+	register_activation_hook(__FILE__, array($weworthbuyPlugin, 'activate'));
 	
 	
 	// deactivation
-	require_once plugin_dir_path(__File__) . 'inc/Base/weworthbuy-plugin-deactivate.php';
-	register_deactivation_hook(__FILE__, array('WeworthbuyPluginDeactivate', 'deactivate'));
+	// require_once plugin_dir_path(__File__) . 'Inc/Base/weworthbuy-plugin-deactivate.php';
+	register_deactivation_hook(__FILE__, array($weworthbuyPlugin, 'deactivate'));
 	 
 	 
 }
