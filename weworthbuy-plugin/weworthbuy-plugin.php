@@ -90,12 +90,12 @@
 	 
 	 
 	// activation
-	require_once plugin_dir_path(__File__) . 'inc/weworthbuy-plugin-activate.php';
+	require_once plugin_dir_path(__File__) . 'inc/Base/weworthbuy-plugin-activate.php';
 	register_activation_hook(__FILE__, array('WeworthbuyPluginActivate', 'activate'));
 	
 	
 	// deactivation
-	require_once plugin_dir_path(__File__) . 'inc/weworthbuy-plugin-deactivate.php';
+	require_once plugin_dir_path(__File__) . 'inc/Base/weworthbuy-plugin-deactivate.php';
 	register_deactivation_hook(__FILE__, array('WeworthbuyPluginDeactivate', 'deactivate'));
 	 
 	 
