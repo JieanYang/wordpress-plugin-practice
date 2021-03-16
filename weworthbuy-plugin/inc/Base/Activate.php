@@ -2,7 +2,7 @@
 /**
  * @package WeworthbuyPlugin
  */
-namespace Inc;
+namespace Inc\Base;
 
 
 
