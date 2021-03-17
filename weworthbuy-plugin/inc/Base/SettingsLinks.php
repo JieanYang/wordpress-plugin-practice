@@ -4,8 +4,6 @@
  */
 namespace Inc\Base;
 
-
-
 class SettingsLinks
 {
   protected $plugin;
